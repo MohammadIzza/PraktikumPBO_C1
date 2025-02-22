@@ -7,5 +7,4 @@ Dalam repositori ini, Anda akan menemukan berbagai tugas dan latihan yang dilaku
 
 ## Struktur Direktori
 
-Repositori ini memiliki beberapa file dan folder yang terorganisir dalam direktori **Week1** dan seterusnya, sesuai dengan topik yang dibahas pada setiap pertemuan. Berikut adalah struktur direktori:
-
+Repositori ini memiliki beberapa file dan folder yang terorganisir dalam direktori **Week1** dan seterusnya, sesuai dengan topik yang dibahas pada setiap pertemuan. 
