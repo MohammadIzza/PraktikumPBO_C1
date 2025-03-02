@@ -8,52 +8,43 @@
 */
 
 public class Dosen {
-    // properti 
+    //Atribut
     private String nip;
     private String nama;
     private String prodi;
 
-    // ArrayList<MataKuliah> listMatkul; 
-    // private Dosen doseWali;
-    // private Kendaraan kendaraan;
-    
-    // konstruktor tanpa parameter 
     public Dosen(){
         nip = "";
         nama = "";
         prodi = "";
     }
-
-    // konstruktor dengan parameter 
-    public Dosen(String nip, String nama, String prodi){
-        this.nip = nip;
-        this.nama = nama;
-        this.prodi = prodi;
+    
+    public Dosen(String Nip, String Nama, String Prodi){
+        nip = Nip;
+        nama = Nama;
+        prodi = Prodi;
     }
 
-    // selector 
+    //Selektor
     public String getNip(){
         return nip;
     }
-
     public String getNama(){
         return nama;
     }
-
     public String getProdi(){
         return prodi;
     }
 
-    // Mutator
-    public void setNip(String NIP){
-        nip = NIP;
+    //Mutator
+    public void setNip(String Nip){
+        nip = Nip;
+    }
+    public void setNama(String Nama){
+        nama = Nama;
+    }
+    public void setProdi(String Prodi){
+        prodi = Prodi;
     }
 
-    public void setNama(String NAMA){
-        nama = NAMA;
-    }
-
-    public void setProdu(String PRODI){
-        prodi = PRODI;
-    }
-}   
+}

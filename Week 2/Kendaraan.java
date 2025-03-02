@@ -5,39 +5,35 @@
 */
 
 public class Kendaraan {
-    // properti 
-    private int noPlat;
+    //Atribut
+    private String noPlat;
     private String jenis;
 
-    
-    // konstruktor tanpa parameter 
     public Kendaraan(){
-        noPlat = 0;
+        noPlat = "";
         jenis = "";
     }
-
-    // konstruktor dengan parameter 
-    public Kendaraan(int noPlat, String jenis ){
-        this.noPlat = noPlat;
-        this.jenis = jenis;
+    
+    public Kendaraan(String Plat, String Jenis){
+        noPlat = Plat;
+        jenis = Jenis;
     }
 
-    // selector 
-    public int getNoPlat(){
+    //Selektor
+    public String getNoPlat(){
         return noPlat;
     }
-
-    public String getJenisKendaraan(){
+    public String getJenis(){
         return jenis;
     }
 
-    // Mutator
-    public void setNoPlat(int id){
-        noPlat = id;
+    //Mutator
+    public void setNoPlat(String Plat){
+        noPlat = Plat;
+    }
+    public void setJenis(String Jenis){
+        jenis = Jenis;
     }
 
-    public void setJenisKendaraan(String NAMA){
-        jenis = NAMA;
-    }
 
-}   
+}

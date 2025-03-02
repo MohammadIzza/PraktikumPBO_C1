@@ -5,49 +5,43 @@
 */
 
 public class MataKuliah {
-    // properti 
-    private int idMatKul;
+    //Atribut
+    private String idMatkul;
     private String nama;
     private int sks;
 
-    
-    // konstruktor tanpa parameter 
+    //Konstruktor
     public MataKuliah(){
-        idMatKul = 0;
+        idMatkul = "";
         nama = "";
         sks = 0;
     }
 
-    // konstruktor dengan parameter 
-    public MataKuliah(int idMatKul, String nama, int sks){
-        this.idMatKul = idMatKul;
-        this.nama = nama;
-        this.sks = sks;
+    public MataKuliah(String ID, String name, int SKS){
+        idMatkul = ID;
+        nama = name;
+        sks = SKS;
     }
 
-    // selector 
-    public int getIdMatkul(){
-        return idMatKul;
+    //Selektor
+    public String getIdMatkul(){
+        return idMatkul;
     }
-
-    public String getNamaMatkul(){
+    public String getNama(){
         return nama;
     }
-
     public int getSks(){
         return sks;
     }
 
-    // Mutator
-    public void setIdMatkul(int id){
-        idMatKul = id;
+    //Mutator
+    public void setIdMatkul(String ID){
+        idMatkul = ID;
     }
-
-    public void setNamaMatkul(String NAMA){
-        nama = NAMA;
+    public void setNama(String name){
+        nama = name;
     }
-
-    public void setSks(int p){
-        sks = p;
+    public void setSks(int SKS){
+        sks = SKS;
     }
-}   
+}
