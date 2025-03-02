@@ -1,4 +1,4 @@
-# Titik dan Garis Week2 - Mohammad Izza Hakiki
+# Week2 - Mohammad Izza Hakiki
 
 ## Pembuat
 - **Nama**: Mohammad Izza Hakiki
