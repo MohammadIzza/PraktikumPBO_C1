@@ -1,36 +1,29 @@
-/* Nama File    : Dosen.java
- * Deskripsi    : class abstrak Dosen yang merupakan turunan dari Pegawai
-* Pembuat       : Mohammad Izza Hakiki / 24060123140139
-* Tanggal       : 16 Maret 2025
- */
+// Pembuat      : Mohammad Izza Hakiki / 24060123140139
+// Tanggal      : 14 Maret 2025
+// File         : Dosen.java
+// Deskripsi    : Class untuk menyimpan Dosen, turunan dari Pegawai
 
- package PEGAWAI;
+import java.time.LocalDate;
 
- public class Dosen extends Pegawai {
-     public String fakultas;
-     
-     public Dosen() {
-         super();
-         this.fakultas = "";
-     }
- 
-     public Dosen(String NIP, String NAMA, String tanggalLahir, String TMT, int GajiPokok, String fakultas) {
-         super(NIP, NAMA, tanggalLahir, TMT, GajiPokok);
-         this.fakultas = fakultas;
-     }
- 
-     public String getFakultas() {
-         return fakultas;
-     }
- 
-     public void setFakultas(String fakultas) {
-         this.fakultas = fakultas;
-     }
- 
-     @Override
-     public void printInfo() {
-         super.printInfo();
-         System.out.println("Fakultas     : " + fakultas);
-     }
- }
- 
+abstract class Dosen extends Pegawai{
+    protected String Fakultas;
+
+    public Dosen(String NIP, String Nama, LocalDate TanggalLahir, LocalDate TMT, double GajiPokok, String Fakultas){
+        super(NIP, Nama, TanggalLahir, TMT, GajiPokok);
+        this.Fakultas = Fakultas;
+    }
+
+    public String getFakultas(){
+        return Fakultas;
+    }
+
+    public void setFakultas(String Fakultas){
+        this.Fakultas = Fakultas;
+    }
+
+    @Override
+    public void printInfo(){
+        super.printInfo();
+        System.out.println("Fakultas        : " + getFakultas());
+    }
+}

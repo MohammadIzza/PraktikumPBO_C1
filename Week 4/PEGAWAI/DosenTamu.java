@@ -1,65 +1,57 @@
-/* Nama File   : DosenTamu.java
-* Deskripsi    : class DosenTamu yang merupakan turunan dari Dosen
-* Pembuat      : Mohammad Izza Hakiki / 24060123140139
-* Tanggal      : 16 Maret 2025
-*/
-
-package PEGAWAI;
+// Pembuat      : Mohammad Izza Hakiki / 24060123140139
+// Tanggal      : 14 Maret 2025
+// File         : DosenTamu.java
+// Deskripsi    : Class untuk menyimpan DosenTamu, turunan dari Dosen   
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.format.DateTimeFormatter;
 
-public class DosenTamu extends Dosen {
-    private LocalDate tanggalAkhirKontrak;
-    private int tunjangan;
+public class DosenTamu extends Dosen{
+    private int masaKontrak; 
     private String NIDK;
-    private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("d MMM yyyy");
 
-    public DosenTamu() {
-        super();
-        this.tanggalAkhirKontrak = LocalDate.now();
-        this.tunjangan = 0;
-        this.NIDK = " ";
+    public DosenTamu(String NIP, String Nama, LocalDate TanggalLahir, LocalDate TMT, double GajiPokok, String Fakultas, String NIDK, LocalDate tanggalAkhirKontrak) {
+        super(NIP, Nama, TanggalLahir, TMT, GajiPokok, Fakultas);
+        this.NIDK = NIDK;
+        this.masaKontrak = hitungMasaKontrak(TMT, tanggalAkhirKontrak);
     }
 
-    public DosenTamu(String NIP, String NIDK, String NAMA, String tanggalLahir, String TMT, int GajiPokok, String fakultas, String tanggalAkhirKontrak) {
-        super(NIP, NAMA, tanggalLahir, TMT, GajiPokok, fakultas);
-        this.tanggalAkhirKontrak = LocalDate.parse(tanggalAkhirKontrak, DATE_FORMAT);
-        int masaKontrak = this.tanggalAkhirKontrak.getYear() - LocalDate.now().getYear();
-        this.tunjangan = (int) (0.025 * masaKontrak * GajiPokok);
+    private int hitungMasaKontrak(LocalDate TMT, LocalDate tanggalAkhirKontrak) {
+        Period period = Period.between(TMT, tanggalAkhirKontrak);
+        return period.getYears() * 12 + period.getMonths();
+    }
+
+    public int getMasaKontrak() {
+        return masaKontrak;
+    }
+
+    public String getNIDK(){
+        return NIDK;
+    }   
+
+    public void setNIDK(String NIDK) {
         this.NIDK = NIDK;
     }
 
-    public LocalDate getTanggalAkhirKontrak() {
-        return tanggalAkhirKontrak;
+    protected String getMasaKerja(){
+        Period period = Period.between(TMT, LocalDate.now());
+        return period.getYears() + " tahun " + period.getMonths() + " bulan";
     }
 
-    public int getTunjangan() {
-        return tunjangan;
-    }
-
-    public void setTanggalAkhirKontrak(String TAK){
-    this.tanggalAkhirKontrak = LocalDate.parse(TAK, DATE_FORMAT);
-    }
-
-    public void setTunjangan(int tunjangan){
-    this.tunjangan = tunjangan;
+    public double hitungTunjangan(){
+        int tahunMulai = getTMT().getYear();
+        int tahunSekarang = LocalDate.now().getYear();
+        int masaKerja = tahunSekarang - tahunMulai;
+        return 0.02 * masaKerja * getGajiPokok();
     }
 
     @Override
-    public void printInfo() {
-        LocalDate sekarang = LocalDate.now();
-        Period masaKerja = Period.between(getTMT(), sekarang);
-        int tahunKerja = masaKerja.getYears();
-        int bulanKerja = masaKerja.getMonths();
-
+    public void printInfo(){
         super.printInfo();
-        System.out.println("NIDK         : " + this.NIDK);
-        System.out.println("Jabatan      : Dosen tamu");
-        System.out.println("Masa Kerja   : " + tahunKerja + " tahun " + bulanKerja + " bulan");
-        System.out.println("Akhir Kontrak: " + tanggalAkhirKontrak);
-        System.out.println("Tunjangan    : Rp " + tunjangan);
-        System.out.println("==================================");
+        System.out.println("NIDK                 : " + getNIDK());
+        System.out.println("Jabatan              : Dosen Tamu");
+        System.out.println("Masa Kerja           : " + getMasaKerja());
+        System.out.println("Masa Kontrak Berakhir: " + getMasaKontrak() + " Bulan");
+        System.out.println("Tunjangan            : 2.5% x " + Period.between(TMT, LocalDate.now()).getYears() + " x Rp " + String.format("%,.2f", getGajiPokok()) + " = Rp " + hitungTunjangan());
     }
 }

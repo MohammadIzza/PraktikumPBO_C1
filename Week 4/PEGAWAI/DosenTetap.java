@@ -1,65 +1,41 @@
-/* Nama File    : DosenTetap.java
- * Deskripsi    : class DosenTetap yang merupakan turunan dari Dosen
-* Pembuat       : Mohammad Izza Hakiki / 24060123140139
-* Tanggal       : 16 Maret 2025
- */
-
-package PEGAWAI;
+// Pembuat      : Mohammad Izza Hakiki / 24060123140139
+// Tanggal      : 14 Maret 2025
+// File         : DosenTetap.java
+// Deskripsi    : Class untuk menyimpan DosenTetap, turunan dari Dosen
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.format.DateTimeFormatter;
 
-public class DosenTetap extends Dosen {
-    private LocalDate BUP;
-    private int tunjangan;
+
+public class DosenTetap extends Dosen{
     private String NIDN;
-    private static final int BATAS_USIA_PENSIUN = 65;
-    private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("d MMM yyyy");
 
-    public DosenTetap() {
-        super();
-        this.BUP = LocalDate.now();
-        this.tunjangan = 0;
-    }
-
-    public DosenTetap(String NIP, String NIDN, String NAMA, String tanggalLahir, String TMT, int GajiPokok, String fakultas) {
-        super(NIP, NAMA, tanggalLahir, TMT, GajiPokok, fakultas);
-        this.BUP = LocalDate.parse(tanggalLahir, DATE_FORMAT).plusYears(BATAS_USIA_PENSIUN);
-        int masaKerja = LocalDate.now().getYear() - LocalDate.parse(TMT, DATE_FORMAT).getYear();
-        this.tunjangan = (int) (0.02 * masaKerja * GajiPokok);
+    public DosenTetap(String NIP, String Nama, LocalDate TanggalLahir, LocalDate TMT, double GajiPokok, String Fakultas, String NIDN) {
+        super(NIP, Nama, TanggalLahir, TMT, GajiPokok, Fakultas);
         this.NIDN = NIDN;
     }
 
-    public LocalDate getBUP() {
-        return BUP;
+    public LocalDate getBUP(){
+        return getTanggalLahir().plusYears(65).withDayOfMonth(1).plusMonths(1);
     }
 
-    public int getTunjangan() {
-        return tunjangan;
+    public String getMasaKerja(){
+        Period period = Period.between(TMT, LocalDate.now());
+        return period.getYears() + " tahun " + period.getMonths() + " bulan";
     }
-
-    public void setBUP(String BUP){
-        this.BUP = LocalDate.parse(BUP, DATE_FORMAT);
-    }
-
-    public void setTunjangan(int tunjangan){
-        this.tunjangan = tunjangan;
+    
+    public double getTunjangan(){
+        int masaKerja = Period.between(TMT, LocalDate.now()).getYears();
+        return 0.02 * masaKerja * getGajiPokok();
     }
 
     @Override
-    public void printInfo() {
-        LocalDate sekarang = LocalDate.now();
-        Period masaKerja = Period.between(getTMT(), sekarang);
-        int tahunKerja = masaKerja.getYears();
-        int bulanKerja = masaKerja.getMonths();
-
+    public void printInfo(){
         super.printInfo();
-        System.out.println("NIDN         : " + this.NIDN);
-        System.out.println("Jabatan      : Dosen tetap");
-        System.out.println("Masa Kerja   : " + tahunKerja + " tahun " + bulanKerja + " bulan");
-        System.out.println("BUP          : " + BUP);
-        System.out.println("Tunjangan    : Rp " + tunjangan);
-        System.out.println("==================================");
+        System.out.println("NIDN                : " + NIDN);
+        System.out.println("Jabatan           : Dosen Tetap");
+        System.out.println("BUP                 : " + DateFormat(getBUP()));
+        System.out.println("Masa Kerja          : " + getMasaKerja());
+        System.out.println("Tunjangan           : 2% x " + Period.between(TMT, LocalDate.now()).getYears() + " x Rp " + String.format("%,.2f", getGajiPokok()) + " = Rp " + getTunjangan());
     }
 }
