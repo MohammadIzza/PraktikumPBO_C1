@@ -67,6 +67,14 @@ public abstract  class BangunDatar{
 }
 
 
-//JAWABAN
-/*Tidak bisa karena pada class BangunDatar, Atribut atributnya bersifat private, 
-  Jadi tidak bisa diakses secara langsung. Jika ingin mengaksesnya harus menggunakan konstruktor super() */
+/* SOAL  : 
+1. Apakah method yang dibuat pada langkah nomor 4 dapat digunakan untuk membandingkan objek
+bangun datar yang berbeda?
+2. Jika BangunDatar tidak dijadikan sebagai abstract class, dapatkah Anda membuat method isEqualLuas()
+dan isEqualKeliling pada class BangunDatar? Mengapa?
+3. Apakah kelebihan saat class BangunDatar dijadikan sebagai abstract class daripada non-abstract class?
+JAWABAN :
+1. Bisa. hal ini karena masih digunakan untuk membandingkan antara objek bangun datar. Lalu kedua method tersebut juga membandingkan nilai hasil perhitungan luas dan keliling, bukan tipe spesifik objeknya.
+2. Tidak bisa. Hal ini karena isEqualLuas() dan isEqualKeliling() memanggil getLuas() dan getKeliling(), yang hanya ada di BangunDatar.
+3. Mencegah inisiasi langsung dan memastikan seluruh child mewarisi method abstract dari parent, sehingga lebih serasi
+ */
