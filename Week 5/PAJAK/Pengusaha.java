@@ -40,9 +40,10 @@ public class Pengusaha extends Manusia {
         Pengusaha.counterPengusaha = counterPengusaha;
     }
 
-    // 24060123130081
+    // 24060123140139
+    @Override
     public int hitungMasaKerja() {
-        return (LocalDate.now().getYear() - tgl_mulai_kerja.getYear()) + 8;
+        return (LocalDate.now().getYear() - tgl_mulai_kerja.getYear()) + 3;
     }
 
     @Override
@@ -53,7 +54,7 @@ public class Pengusaha extends Manusia {
         System.out.println("Masa Kerja          : " + hitungMasaKerja() + " tahun");
         System.out.println("=====================================");
     }
-
+    @Override
     public double hitungPajak() {
         return this.getPendapatan() * 0.15;
     }

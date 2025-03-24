@@ -40,9 +40,10 @@ public class PNS extends Manusia {
         PNS.counterPNS = counterPNS;
     }
 
-    // 24060123130081
+    // 24060123140139
+    @Override
     public int hitungMasaKerja() {
-        return (LocalDate.now().getYear() - super.getTglMulaiKerja().getYear()) + 1;
+        return (LocalDate.now().getYear() - super.getTglMulaiKerja().getYear()) + 9;
     }
 
     @Override
@@ -54,6 +55,7 @@ public class PNS extends Manusia {
         System.out.println("=====================================");
     }
 
+    @Override
     public double hitungPajak() {
         return this.getPendapatan() * 0.1;
     }

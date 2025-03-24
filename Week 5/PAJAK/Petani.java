@@ -40,9 +40,10 @@ public class Petani extends Manusia {
         Petani.counterPetani = counterPetani;
     }
 
-    // 24060123130081
+    // 24060123140139
+    @Override
     public int hitungMasaKerja() {
-        return (LocalDate.now().getYear() - tgl_mulai_kerja.getYear()) + 0;
+        return (LocalDate.now().getYear() - tgl_mulai_kerja.getYear()) + 1;
     }
 
     @Override
@@ -53,7 +54,7 @@ public class Petani extends Manusia {
         System.out.println("Masa Kerja          : " + hitungMasaKerja() + " tahun");
         System.out.println("=====================================");
     }
-
+    @Override
     public double hitungPajak() {
         return 0;
     }
