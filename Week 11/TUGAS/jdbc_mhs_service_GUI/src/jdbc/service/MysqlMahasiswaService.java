@@ -1,4 +1,4 @@
-// Pembuat      : Khoirul Nasid Furqon - 24060123120042
+// Pembuat      : Mohammad Izza Hakiki - 24060123140139
 // Tanggal      : 28 Mei 2025
 // File         : MysqlMahasiswaService.java
 // Deskripsi    : Implementasi service
@@ -9,11 +9,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package jdbc.service;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import jdbc.model.Mahasiswa;
 import jdbc.utilities.MysqlUtility;
-import java.sql.*;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  *

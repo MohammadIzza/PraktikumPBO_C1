@@ -1,5 +1,5 @@
 
-// Pembuat      : Khoirul Nasid Furqon - 24060123120042
+// Pembuat      : Mohammad Izza Hakiki - 24060123140139
 // Tanggal      : 21 Mei 2025
 // File         : Proyek3.java
 // Deskripsi    : Implementasi GUI untuk proyek3
