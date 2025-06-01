@@ -17,7 +17,7 @@ import jdbc.utilities.MysqlUtility;
 
 /**
  *
- * @author ASUS
+ * @author Izza
  */
 public class MysqlMahasiswaService {
     private Connection koneksi;

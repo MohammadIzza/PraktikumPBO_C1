@@ -12,7 +12,7 @@ import javax.swing.DefaultListModel;
 
 /**
  *
- * @author ASUS
+ * @author Izza
  */
 public class Proyek2 extends javax.swing.JFrame {
     

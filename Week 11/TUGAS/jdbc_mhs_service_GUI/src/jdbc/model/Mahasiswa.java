@@ -1,4 +1,4 @@
-// Pembuat      : Mohammad Izza Hakiki - 24060123140139
+// Pembuat      : Mohammad Izza Hakiki - 24060123149138
 // Tanggal      : 28 Mei 2025
 // File         : Mahasiswa.java
 // Deskripsi    : Implementasi Model Mahasiswa
@@ -11,7 +11,7 @@ package jdbc.model;
 
 /**
  *
- * @author ASUS
+ * @author Izza
  */
 public class Mahasiswa {
 

@@ -11,10 +11,11 @@ package jdbc.program;
 import java.util.*;
 import jdbc.model.Mahasiswa;
 import jdbc.service.MysqlMahasiswaService;
+import jdbc.utilities.MysqlUtility;
 
 /**
  *
- * @author ASUS
+ * @author Izza
  */
 public class Program {
 
@@ -25,25 +26,28 @@ public class Program {
 
         // insert
         System.out.println("===insert===");
-        Mahasiswa mhsAdd = new Mahasiswa(5, "Khoirul");
+        Mahasiswa mhsAdd = new Mahasiswa();
+        mhsAdd.setNama("Mohammad Izza Hakiki");
         service.add(mhsAdd);
         System.out.println("berhasil insert: " + mhsAdd);
         service.displayAll();
 
         // update
         System.out.println("===update===");
-        Mahasiswa mhsUpdate = service.getById(5);
+        Mahasiswa mhsUpdate = service.getById(mhsAdd.getId());
         System.out.println("Akan diupdate data lama: " + mhsUpdate);
-        mhsUpdate.setNama("Nasid");
+        mhsUpdate.setNama("Kiki");
         System.out.println("dengan data baru: " + mhsUpdate);
         service.update(mhsUpdate);
         service.displayAll();
 
         // delete
         System.out.println("===delete===");
-        System.out.println("akan di delete: " + service.getById(5));
-        service.delete(5);
+        System.out.println("akan di delete: " + service.getById(mhsAdd.getId()));
+        service.delete(mhsAdd.getId());
         service.displayAll();
+
+        MysqlUtility.closeConnection(); // Tutup koneksi
     }
 }
 

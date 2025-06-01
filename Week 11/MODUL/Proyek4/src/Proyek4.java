@@ -12,7 +12,7 @@ import java.util.*;
 
 /**
  *
- * @author ASUS
+ * @author Izza
  */
 public class Proyek4 extends javax.swing.JFrame {
     

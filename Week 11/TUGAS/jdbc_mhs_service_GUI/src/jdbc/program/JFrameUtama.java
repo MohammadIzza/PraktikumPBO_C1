@@ -15,7 +15,7 @@ import jdbc.service.MysqlMahasiswaService;
 
 /**
  *
- * @author ASUS
+ * @author Izza
  */
 public class JFrameUtama extends javax.swing.JFrame {
     DefaultListModel<String> listID;

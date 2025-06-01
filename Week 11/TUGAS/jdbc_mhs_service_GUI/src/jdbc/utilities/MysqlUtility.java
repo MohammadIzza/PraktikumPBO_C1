@@ -11,7 +11,7 @@ package jdbc.utilities;
 import java.sql.*;
 /**
  *
- * @author ASUS
+ * @author Izza
  */
 public class MysqlUtility {
 
@@ -20,12 +20,12 @@ public class MysqlUtility {
     public static Connection getConnection() {
         if (koneksi == null) {
             try {
-                Class.forName("com.mysql.jdbc.Driver");
+                Class.forName("com.mysql.cj.jdbc.Driver");
                 // Sesuaikan host, port, nama db
-                String url = "jdbc:mysql://localhost:3306/pbo";
+                String url = "jdbc:mysql://localhost:3306/pbo?useSSL=false&serverTimezone=UTC";
                 // sesuaikan username dan password
                 String user = "root";
-                String password = "khoirul";
+                String password = "";
                 koneksi = DriverManager.getConnection(url, user, password);
                 if (koneksi != null) {
                     System.out.println("Koneksi berhasil");

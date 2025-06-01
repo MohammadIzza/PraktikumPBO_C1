@@ -1,8 +1,9 @@
+package com.proyek1;
+
 // Pembuat      : Mohammad Izza Hakiki - 24060123140139
-// Tanggal      : 21 Mei 2025
+// Tanggal      : 21 Mei 2024
 // File         : GUI.java
 // Deskripsi    : Implementasi GUI
-
 
 import javax.swing.DefaultListModel;
 
@@ -13,7 +14,7 @@ import javax.swing.DefaultListModel;
 
 /**
  *
- * @author ASUS
+ * @author Izza
  */
 
 public class GUI extends javax.swing.JFrame {

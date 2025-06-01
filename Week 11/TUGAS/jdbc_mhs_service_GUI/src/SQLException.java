@@ -5,7 +5,7 @@
 
 /**
  *
- * @author ASUS
+ * @author Izza
  */
 class SQLException {
     

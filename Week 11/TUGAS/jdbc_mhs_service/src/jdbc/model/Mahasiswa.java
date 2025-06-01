@@ -12,7 +12,7 @@ package jdbc.model;
 
 /**
  *
- * @author ASUS
+ * @author Izza
  */
 public class Mahasiswa {
 
